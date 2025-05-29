@@ -31,6 +31,32 @@ public class AdminController : ControllerBase
         return Ok("Adminanvändare skapad");
     }
 
+    [HttpGet("me")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetMyAdminInfo()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized("User ID not found in token");
+
+        var adminUser = await _userRepository.GetAdminUserByIdAsync(userId);
+
+        if (adminUser == null)
+            return NotFound("Admin user not found");
+
+        var roles = await _userRepository.GetRolesAsync(adminUser);
+
+        return Ok(new
+        {
+            adminUser.UserName,
+            adminUser.Email,
+            adminUser.PhoneNumber,
+            adminUser.FirstName,
+            adminUser.LastName,
+            Roles = roles
+        });
+    }
+
 
     [HttpPut("update-admin")]
     [Authorize(Roles = "Admin")]

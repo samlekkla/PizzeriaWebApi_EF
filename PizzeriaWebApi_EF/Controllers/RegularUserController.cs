@@ -32,19 +32,24 @@ public class RegularUserController : ControllerBase
     public async Task<IActionResult> GetMyInfo()
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        var user = await _userRepository.GetUserByIdAsync(userId);
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized("User ID not found in token");
 
-        if (user == null) return NotFound();
+        // Hämta RegularUser för att få tillgång till alla egenskaper
+        var regularUser = await _userRepository.GetRegularUserByIdAsync(userId);
 
-        var roles = await _userRepository.GetRolesAsync(user);
+        if (regularUser == null)
+            return NotFound("Regular user not found");
+
+        var roles = await _userRepository.GetRolesAsync(regularUser);
 
         return Ok(new
         {
-            user.UserName,
-            user.Email,
-            user.PhoneNumber,
-            user.FirstName,
-            user.LastName,
+            regularUser.UserName,
+            regularUser.Email,
+            regularUser.PhoneNumber,
+            regularUser.FirstName,
+            regularUser.LastName,
             Roles = roles
         });
     }
@@ -57,7 +62,7 @@ public class RegularUserController : ControllerBase
         var regularUser = await _userRepository.GetRegularUserByIdAsync(userId);
 
         if (regularUser == null)
-            return BadRequest("Användare hittades inte eller har fel typ");
+            return BadRequest("User could not be found or wrong type");
 
         regularUser.UserName = dto.UserName;
         regularUser.Email = dto.Email;
@@ -66,8 +71,10 @@ public class RegularUserController : ControllerBase
         regularUser.PhoneNumber = dto.Phone;
 
         var result = await _userRepository.UpdateUserAsync(regularUser);
-        if (!result) return BadRequest("Uppdatering misslyckades");
+        if (!result) return BadRequest("Update failed");
 
-        return Ok("Profil uppdaterad");
+        return Ok("Profile updated!");
     }
+
+
 }

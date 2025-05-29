@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PizzeriaWebApi_EF.Data;
 
 #nullable disable
 
-namespace PizzeriaWebApi_EF.Data.Migrations
+namespace PizzeriaWebApi_EF.Migrations.Application
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20250529210819_AddOrderTable")]
+    partial class AddOrderTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,6 +38,21 @@ namespace PizzeriaWebApi_EF.Data.Migrations
                     b.HasIndex("IngredientsIngredientID");
 
                     b.ToTable("DishIngredient");
+                });
+
+            modelBuilder.Entity("DishOrder", b =>
+                {
+                    b.Property<int>("DishesDishID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.HasKey("DishesDishID", "OrderID");
+
+                    b.HasIndex("OrderID");
+
+                    b.ToTable("OrderDishes", (string)null);
                 });
 
             modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.Category", b =>
@@ -118,39 +136,13 @@ namespace PizzeriaWebApi_EF.Data.Migrations
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("UserID")
+                    b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("OrderID");
 
                     b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.OrderItem", b =>
-                {
-                    b.Property<int>("OrderItemID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderItemID"));
-
-                    b.Property<int>("DishID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("OrderItemID");
-
-                    b.HasIndex("DishID");
-
-                    b.HasIndex("OrderID");
-
-                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("DishIngredient", b =>
@@ -168,6 +160,21 @@ namespace PizzeriaWebApi_EF.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("DishOrder", b =>
+                {
+                    b.HasOne("PizzeriaWebApi_EF.Data.Entities.Dish", null)
+                        .WithMany()
+                        .HasForeignKey("DishesDishID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PizzeriaWebApi_EF.Data.Entities.Order", null)
+                        .WithMany()
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.Dish", b =>
                 {
                     b.HasOne("PizzeriaWebApi_EF.Data.Entities.Category", "Category")
@@ -179,33 +186,9 @@ namespace PizzeriaWebApi_EF.Data.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.OrderItem", b =>
-                {
-                    b.HasOne("PizzeriaWebApi_EF.Data.Entities.Dish", "Dish")
-                        .WithMany()
-                        .HasForeignKey("DishID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PizzeriaWebApi_EF.Data.Entities.Order", "Order")
-                        .WithMany("Items")
-                        .HasForeignKey("OrderID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Dish");
-
-                    b.Navigation("Order");
-                });
-
             modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.Category", b =>
                 {
                     b.Navigation("Dishes");
-                });
-
-            modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.Order", b =>
-                {
-                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

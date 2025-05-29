@@ -7,8 +7,12 @@ using PizzeriaWebApi_EF.Data;
 using PizzeriaWebApi_EF.Data.Interfaces;
 using PizzeriaWebApi_EF.Identity;
 using PizzeriaWebApi_EF.Middleware;
+using PizzeriaWebApi_EF.Services;
 using System.Text;
 using System.Text.Json.Serialization;
+using TomasosPizzeria_API.Data.Interfaces;
+using TomasosPizzeria_API.Data.Repos;
+using TomasosPizzeria_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -59,7 +63,16 @@ builder.Services.AddAuthentication(options =>
 
 // DI
 builder.Services.AddScoped<IUserService, UserRepository>();
+builder.Services.AddScoped<IIngredientService, IngredientService>();
+builder.Services.AddScoped<IngredientRepository>();
+builder.Services.AddScoped<ICategoryService, CatagoryService>();
+builder.Services.AddScoped<CategoryRepository>();
+builder.Services.AddScoped<IDishService, DishService>();
+builder.Services.AddScoped<DishRepository>();
+builder.Services.AddScoped<OrderRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddSingleton<JwtTokenGenerator>();
+
 
 // Swagger + JWT Bearer
 builder.Services.AddEndpointsApiExplorer();
@@ -115,6 +128,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    app.MapGet("/", () => Results.Redirect("/swagger"));
 }
 
 app.UseRouting();
