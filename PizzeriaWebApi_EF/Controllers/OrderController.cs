@@ -28,7 +28,7 @@ public class OrderController : ControllerBase
     public async Task<IActionResult> GetMyOrders()
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        var orders = await _orderService.GetOrdersByUserIdAsync(userId);
-        return Ok(orders);
+        var result = await _orderService.GetOrdersByUserIdAsync(userId);
+        return Ok(result);
     }
 }

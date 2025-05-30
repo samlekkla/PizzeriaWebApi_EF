@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using PizzeriaWebApi_EF.Data.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace PizzeriaWebApi_EF.Data.Entities
 {
@@ -17,5 +18,9 @@ namespace PizzeriaWebApi_EF.Data.Entities
         public decimal TotalPrice { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public bool UsedBonus { get; set; } = false;
+
+        [Required]
+        public OrderStatus Status { get; set; } = OrderStatus.Pending;
     }
 }

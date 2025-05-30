@@ -30,4 +30,26 @@ public class OrderRepository
             .Where(o => o.UserID == userId)
             .ToListAsync();
     }
+
+    public async Task<int> GetUserBonusPointsAsync(string userId)
+    {
+        var orders = await _context.Orders
+            .Include(o => o.Items)
+            .ThenInclude(i => i.Dish)
+            .Where(o => o.UserID == userId)
+            .ToListAsync();
+
+        return orders.Sum(o => o.Items.Sum(i => i.Quantity * 10));
+    }
+
+    public async Task<Order> GetOrderByIdAsync(int orderId)
+    {
+        return await _context.Orders.FindAsync(orderId);
+    }
+
+    public async Task UpdateOrderAsync(Order order)
+    {
+        _context.Orders.Update(order);
+        await _context.SaveChangesAsync();
+    }
 }
