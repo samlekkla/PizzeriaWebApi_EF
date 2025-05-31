@@ -59,6 +59,9 @@ public class RegularUserController : ControllerBase
     public async Task<IActionResult> UpdateUser([FromBody] RegularUserDto dto)
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized("User ID not found in token");
+
         var regularUser = await _userRepository.GetRegularUserByIdAsync(userId);
 
         if (regularUser == null)

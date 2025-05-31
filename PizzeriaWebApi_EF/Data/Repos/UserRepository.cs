@@ -28,7 +28,7 @@ public class UserRepository
         return result.Succeeded;
     }
 
-    public async Task<ApplicationUser> GetUserByIdAsync(string userId)
+    public async Task<ApplicationUser?> GetUserByIdAsync(string userId)
     {
         return await _userManager.Users.FirstOrDefaultAsync(u => u.Id == userId);
     }

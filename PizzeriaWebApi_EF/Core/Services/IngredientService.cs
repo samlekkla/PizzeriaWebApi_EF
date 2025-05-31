@@ -32,7 +32,7 @@ namespace PizzeriaWebApi_EF.Services
             return await _repo.GetAllIngredientsAsync();
         }
 
-        public async Task<Ingredient> GetIngredientByIdAsync(int id)
+        public async Task<Ingredient?> GetIngredientByIdAsync(int id)
         {
             return await _repo.GetIngredientByIdAsync(id);
         }

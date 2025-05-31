@@ -28,7 +28,7 @@ namespace TomasosPizzeria_API.Services
             await _repo.DeleteDishAsync(id);
         }
 
-        public async Task<Dish> GetDishByIdAsync(int id)
+        public async Task<Dish?> GetDishByIdAsync(int id)
         {
             return await _repo.GetDishByIdAsync(id);
         }

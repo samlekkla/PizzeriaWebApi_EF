@@ -28,8 +28,17 @@ public class OrderService : IOrderService
         var roles = await _userRepository.GetRolesAsync(user);
         bool isPremium = roles.Contains("PremiumUser");
 
-        var items = new List<OrderItem>();
+        bool usedBonus = false;
         decimal totalPrice = 0;
+
+        // Skapa Order först
+        var order = new Order
+        {
+            UserID = userId,
+            CreatedAt = DateTime.UtcNow,
+            Items = new List<OrderItem>(), // initial tom lista
+            Status = OrderStatus.Pending
+        };
 
         foreach (var itemDto in itemsDto)
         {
@@ -38,27 +47,28 @@ public class OrderService : IOrderService
 
             totalPrice += dish.Price * itemDto.Quantity;
 
-            items.Add(new OrderItem
+            var orderItem = new OrderItem
             {
                 DishID = itemDto.DishID,
                 Quantity = itemDto.Quantity,
-                Dish = dish
-            });
+                Dish = dish,
+                Order = order // viktig del
+            };
+
+            order.Items.Add(orderItem);
         }
 
-        bool usedBonus = false;
-        if (isPremium && items.Sum(i => i.Quantity) >= 3)
+        if (isPremium && order.Items.Sum(i => i.Quantity) >= 3)
         {
-            totalPrice *= 0.8m; // 20% rabatt
+            totalPrice *= 0.8m;
         }
 
-        // Bonuspoäng gäller endast PremiumUser roll
         if (isPremium)
         {
             var regUser = await _userRepository.GetRegularUserByIdAsync(userId);
             if (regUser != null)
             {
-                regUser.BonusPoints += items.Sum(i => i.Quantity) * 10;
+                regUser.BonusPoints += order.Items.Sum(i => i.Quantity) * 10;
 
                 if (regUser.BonusPoints >= 100)
                 {
@@ -71,19 +81,13 @@ public class OrderService : IOrderService
             }
         }
 
-        var order = new Order
-        {
-            UserID = userId,
-            CreatedAt = DateTime.UtcNow,
-            Items = items,
-            TotalPrice = totalPrice,
-            Status = OrderStatus.Pending,
-            UsedBonus = usedBonus
-        };
+        order.TotalPrice = totalPrice;
+        order.UsedBonus = usedBonus;
 
         _context.Orders.Add(order);
         await _context.SaveChangesAsync();
     }
+
 
     public async Task<UserOrdersSummaryDto> GetOrdersByUserIdAsync(string userId)
     {

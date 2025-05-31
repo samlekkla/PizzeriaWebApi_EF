@@ -9,7 +9,7 @@ namespace PizzeriaWebApi_EF.Data.Entities
         public int OrderID { get; set; }
 
         [Required]
-        public string UserID { get; set; }
+        public required string UserID { get; set; }
 
         [Required]
         public List<OrderItem> Items { get; set; } = new();

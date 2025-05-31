@@ -40,9 +40,9 @@ public class UserService : IUserService
         return await _userRepository.CreateUserAsync(user, dto.Password, "RegularUser");
     }
 
-    public async Task<(string token, string role)> LoginWithRoleAsync(LoginDto dto)
+    public async Task<(string? token, string? role)> LoginWithRoleAsync(LoginDto dto)
     {
-        ApplicationUser user = null;
+        ApplicationUser? user = null;
 
         if (!string.IsNullOrWhiteSpace(dto.Email))
         {
@@ -59,6 +59,10 @@ public class UserService : IUserService
 
         var roles = await _userRepository.GetRolesAsync(user);
         var role = roles.FirstOrDefault();
+
+        if (string.IsNullOrEmpty(role))
+            return (null, null); // eller throw
+
         var token = _jwtTokenGenerator.GenerateToken(user, role);
         return (token, role);
     }

@@ -33,7 +33,7 @@ namespace TomasosPizzeria_API.Services
             return await _repo.GetAllCategoriesAsync();
         }
 
-        public async Task<Category> GetCategoryByIdAsync(int id)
+        public async Task<Category?> GetCategoryByIdAsync(int id)
         {
             return await _repo.GetCategoryByIdAsync(id);
         }
