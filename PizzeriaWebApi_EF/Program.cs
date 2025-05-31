@@ -1,3 +1,5 @@
+// Program.cs
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -14,13 +16,12 @@ using TomasosPizzeria_API.Data.Interfaces;
 using TomasosPizzeria_API.Data.Repos;
 using TomasosPizzeria_API.Services;
 using Swashbuckle.AspNetCore.Swagger;
-using System.Text.Json;
+using Newtonsoft.Json; // <-- Viktigt!
 
 var builder = WebApplication.CreateBuilder(args);
 
 // JWT-Installation
 var jwtKey = builder.Configuration["Jwt:Key"];
-
 if (string.IsNullOrWhiteSpace(jwtKey))
     throw new InvalidOperationException("JWT key is missing in configuration (Jwt:Key).");
 
@@ -29,7 +30,6 @@ var key = Encoding.UTF8.GetBytes(jwtKey);
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
         options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
@@ -37,21 +37,20 @@ builder.Services.AddControllers()
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddDbContext<ApplicationContext>(
-    options => options.UseSqlServer(connectionString)
+builder.Services.AddDbContext<ApplicationContext>(options =>
+    options.UseSqlServer(connectionString)
 );
 
-builder.Services.AddDbContext<ApplicationUserContext>(
-    options => options.UseSqlServer(connectionString)
+builder.Services.AddDbContext<ApplicationUserContext>(options =>
+    options.UseSqlServer(connectionString)
 );
-
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationUserContext>()
     .AddDefaultTokenProviders();
 
-// JWT Authentication
+// JWT Auth
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -70,7 +69,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// DI
+// Dependency Injection
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IIngredientService, IngredientService>();
@@ -79,12 +78,11 @@ builder.Services.AddScoped<ICategoryService, CatagoryService>();
 builder.Services.AddScoped<CategoryRepository>();
 builder.Services.AddScoped<IDishService, DishService>();
 builder.Services.AddScoped<DishRepository>();
-builder.Services.AddScoped<OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<OrderRepository>();
 builder.Services.AddSingleton<JwtTokenGenerator>();
 
-
-// Swagger + JWT Bearer
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -116,9 +114,9 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-
 var app = builder.Build();
 
+// Skapa roller
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -149,21 +147,17 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// Swagger-export med Newtonsoft.Json
 app.MapGet("/export-swagger", async (ISwaggerProvider swaggerProvider) =>
 {
     var swaggerDoc = swaggerProvider.GetSwagger("v1");
 
-    var json = System.Text.Json.JsonSerializer.Serialize(swaggerDoc, new JsonSerializerOptions
-    {
-        WriteIndented = true,
-        ReferenceHandler = ReferenceHandler.IgnoreCycles
-    });
+    var json = JsonConvert.SerializeObject(swaggerDoc, Formatting.Indented);
 
     var outputPath = Path.Combine(Directory.GetCurrentDirectory(), "swagger.json");
     await File.WriteAllTextAsync(outputPath, json);
 
-    return Results.Ok($"swagger.json sparad till {outputPath}");
+    return Results.Ok($"Swagger-dokument sparat som swagger.json i: {outputPath}");
 });
-
 
 app.Run();
