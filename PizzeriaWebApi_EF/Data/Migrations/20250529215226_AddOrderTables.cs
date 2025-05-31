@@ -13,10 +13,6 @@ namespace PizzeriaWebApi_EF.Migrations.Application
             migrationBuilder.DropTable(
                 name: "OrderDishes");
 
-            migrationBuilder.RenameColumn(
-                name: "UserId",
-                table: "Orders",
-                newName: "UserID");
 
             migrationBuilder.CreateTable(
                 name: "OrderItems",
@@ -62,11 +58,7 @@ namespace PizzeriaWebApi_EF.Migrations.Application
             migrationBuilder.DropTable(
                 name: "OrderItems");
 
-            migrationBuilder.RenameColumn(
-                name: "UserID",
-                table: "Orders",
-                newName: "UserId");
-
+            
             migrationBuilder.CreateTable(
                 name: "OrderDishes",
                 columns: table => new

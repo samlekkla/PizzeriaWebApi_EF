@@ -29,11 +29,15 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
-builder.Services.AddDbContext<ApplicationContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddDbContext<ApplicationUserContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<ApplicationContext>(
+    options => options.UseSqlServer(connectionString)
+);
+
+builder.Services.AddDbContext<ApplicationUserContext>(
+    options => options.UseSqlServer(connectionString)
+);
 
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
