@@ -1,5 +1,3 @@
-// Program.cs
-
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +6,6 @@ using Microsoft.OpenApi.Models;
 using PizzeriaWebApi_EF.Data;
 using PizzeriaWebApi_EF.Data.Interfaces;
 using PizzeriaWebApi_EF.Identity;
-using PizzeriaWebApi_EF.Middleware;
 using PizzeriaWebApi_EF.Services;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -16,17 +13,19 @@ using TomasosPizzeria_API.Data.Interfaces;
 using TomasosPizzeria_API.Data.Repos;
 using TomasosPizzeria_API.Services;
 using Swashbuckle.AspNetCore.Swagger;
-using Newtonsoft.Json; // <-- Viktigt!
+using Newtonsoft.Json;
+using PizzeriaWebApi_EF.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// JWT-Installation
+// JWT-konfiguration
 var jwtKey = builder.Configuration["Jwt:Key"];
 if (string.IsNullOrWhiteSpace(jwtKey))
     throw new InvalidOperationException("JWT key is missing in configuration (Jwt:Key).");
 
 var key = Encoding.UTF8.GetBytes(jwtKey);
 
+// Add controllers + JSON hantering
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -35,22 +34,22 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
+// Add DB Contexts
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<ApplicationContext>(options =>
-    options.UseSqlServer(connectionString)
-);
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddDbContext<ApplicationUserContext>(options =>
-    options.UseSqlServer(connectionString)
-);
+    options.UseSqlServer(connectionString));
 
+// Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationUserContext>()
     .AddDefaultTokenProviders();
 
-// JWT Auth
+// JWT-auth
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -116,7 +115,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Skapa roller
+// Skapa roller automatiskt
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -136,24 +135,21 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-
     app.MapGet("/", () => Results.Redirect("/swagger"));
 }
 
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-// Swagger-export med Newtonsoft.Json
+// Export Swagger JSON med Newtonsoft.Json
 app.MapGet("/export-swagger", async (ISwaggerProvider swaggerProvider) =>
 {
     var swaggerDoc = swaggerProvider.GetSwagger("v1");
 
     var json = JsonConvert.SerializeObject(swaggerDoc, Formatting.Indented);
-
     var outputPath = Path.Combine(Directory.GetCurrentDirectory(), "swagger.json");
     await File.WriteAllTextAsync(outputPath, json);
 
