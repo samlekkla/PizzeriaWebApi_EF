@@ -26,15 +26,14 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
         options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
-builder.Services.AddDbContext<ApplicationContext>(
-   options => options.UseSqlServer(@"Data Source=localhost;Initial Catalog=PizzeriaDB;Integrated Security=SSPI;TrustServerCertificate=True;")
-);
+builder.Services.AddDbContext<ApplicationContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDbContext<ApplicationUserContext>(
-   options => options.UseSqlServer(@"Data Source=localhost;Initial Catalog=PizzeriaDB;Integrated Security=SSPI;TrustServerCertificate=True;")
-);
+builder.Services.AddDbContext<ApplicationUserContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -62,7 +61,8 @@ builder.Services.AddAuthentication(options =>
 });
 
 // DI
-builder.Services.AddScoped<IUserService, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IIngredientService, IngredientService>();
 builder.Services.AddScoped<IngredientRepository>();
 builder.Services.AddScoped<ICategoryService, CatagoryService>();
@@ -112,7 +112,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var roles = new[] { "Admin", "RegularUser" };
+    var roles = new[] { "Admin", "RegularUser", "PremiumUser" };
 
     foreach (var role in roles)
     {

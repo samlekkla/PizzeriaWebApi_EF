@@ -34,7 +34,7 @@ namespace PizzeriaWebApi_EF.Data.Migrations
 
                     b.HasIndex("IngredientsIngredientID");
 
-                    b.ToTable("DishIngredient");
+                    b.ToTable("DishIngredient", (string)null);
                 });
 
             modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.Category", b =>
@@ -52,7 +52,7 @@ namespace PizzeriaWebApi_EF.Data.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.Dish", b =>
@@ -83,7 +83,7 @@ namespace PizzeriaWebApi_EF.Data.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.ToTable("Dishes");
+                    b.ToTable("Dishes", (string)null);
                 });
 
             modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.Ingredient", b =>
@@ -101,7 +101,7 @@ namespace PizzeriaWebApi_EF.Data.Migrations
 
                     b.HasKey("IngredientID");
 
-                    b.ToTable("Ingredients");
+                    b.ToTable("Ingredients", (string)null);
                 });
 
             modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.Order", b =>
@@ -130,7 +130,7 @@ namespace PizzeriaWebApi_EF.Data.Migrations
 
                     b.HasKey("OrderID");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("PizzeriaWebApi_EF.Data.Entities.OrderItem", b =>
@@ -156,7 +156,7 @@ namespace PizzeriaWebApi_EF.Data.Migrations
 
                     b.HasIndex("OrderID");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("DishIngredient", b =>

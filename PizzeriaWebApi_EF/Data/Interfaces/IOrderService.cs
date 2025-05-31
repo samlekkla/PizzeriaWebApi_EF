@@ -7,8 +7,6 @@ namespace PizzeriaWebApi_EF.Data.Interfaces
     {
         Task CreateOrderAsync(string userId, List<DishOrderItem> items);
         Task<UserOrdersSummaryDto> GetOrdersByUserIdAsync(string userId);
-        Task<bool> PromoteUserToPremiumAsync(string userId);
-        Task<bool> DemoteUserToRegularAsync(string userId);
         Task<bool> UpdateOrderStatusAsync(int orderId, string newStatus);
     }
 }

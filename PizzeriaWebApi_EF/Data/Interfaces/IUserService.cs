@@ -15,5 +15,7 @@ namespace PizzeriaWebApi_EF.Data.Interfaces
         Task<bool> AnyAdminExistsAsync();
         Task<IList<string>> GetRolesAsync(ApplicationUser user);
         Task<AdminUser> GetAdminUserByIdAsync(string userId);
+        Task<bool> PromoteUserToPremiumAsync(string userId);
+        Task<bool> DemoteUserToRegularAsync(string userId);
     }
 }

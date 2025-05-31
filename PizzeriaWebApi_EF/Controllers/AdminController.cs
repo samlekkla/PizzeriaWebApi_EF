@@ -20,12 +20,6 @@ public class AdminController : ControllerBase
     [AllowAnonymous]
     public async Task<IActionResult> CreateAdmin([FromBody] AdminUserDto dto)
     {
-        if (await _userRepository.AnyAdminExistsAsync() &&
-         !(User.Identity?.IsAuthenticated == true && User.IsInRole("Admin")))
-        {
-            return Unauthorized("Endast en administratör får skapa nya admin-användare.");
-        }
-
         var result = await _userRepository.RegisterAdminAsync(dto);
         if (!result) return BadRequest("Kunde inte skapa adminanvändare");
         return Ok("Adminanvändare skapad");

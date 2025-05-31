@@ -1,56 +1,36 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using PizzeriaWebApi_EF.Data.Interfaces;
 using PizzeriaWebApi_EF.DTO;
 using PizzeriaWebApi_EF.Identity;
-using PizzeriaWebApi_EF.Middleware;
 
-public class UserRepository : IUserService
+public class UserRepository
 {
-
     private readonly UserManager<ApplicationUser> _userManager;
-    private readonly JwtTokenGenerator _jwtTokenGenerator;
 
-    public async Task<bool> RegisterAdminAsync(AdminUserDto dto)
+    public UserRepository(UserManager<ApplicationUser> userManager)
     {
-        var admin = new AdminUser
-        {
-            UserName = dto.UserName,
-            Email = dto.Email,
-            FirstName = dto.FirstName,
-            LastName = dto.LastName,
-            PhoneNumber = dto.Phone
-        };
+        _userManager = userManager;
+    }
 
-        var result = await _userManager.CreateAsync(admin, dto.Password);
-
+    public async Task<bool> CreateUserAsync(ApplicationUser user, string password, string role)
+    {
+        var result = await _userManager.CreateAsync(user, password);
         if (result.Succeeded)
         {
-            await _userManager.AddToRoleAsync(admin, "Admin");
+            await _userManager.AddToRoleAsync(user, role);
         }
-
         return result.Succeeded;
     }
 
-    public async Task<bool> UpdateAdminAsync(AdminUserDto dto, string userId)
+    public async Task<bool> UpdateUserAsync(ApplicationUser user)
     {
-        var user = await _userManager.FindByIdAsync(userId);
-        if (user == null || user.GetType().Name != nameof(AdminUser)) return false;
-
-        user.UserName = dto.UserName;
-        user.Email = dto.Email;
-        user.FirstName = dto.FirstName;
-        user.LastName = dto.LastName;
-        user.PhoneNumber = dto.Phone;
-
         var result = await _userManager.UpdateAsync(user);
         return result.Succeeded;
     }
 
     public async Task<ApplicationUser> GetUserByIdAsync(string userId)
     {
-        return await _userManager.Users
-            .FirstOrDefaultAsync(u => u.Id == userId);
+        return await _userManager.Users.FirstOrDefaultAsync(u => u.Id == userId);
     }
 
     public async Task<AdminUser> GetAdminUserByIdAsync(string userId)
@@ -68,6 +48,7 @@ public class UserRepository : IUserService
             .Cast<RegularUser>()
             .FirstOrDefaultAsync();
     }
+
     public async Task<bool> AnyAdminExistsAsync()
     {
         var allUsers = await _userManager.Users.ToListAsync();
@@ -79,62 +60,30 @@ public class UserRepository : IUserService
         return await _userManager.GetRolesAsync(user);
     }
 
-    public async Task<bool> RegisterUserAsync(RegularUserDto dto)
+    public async Task<bool> AddToRoleAsync(ApplicationUser user, string role)
     {
-        var user = new RegularUser
-        {
-            UserName = dto.UserName,
-            Email = dto.Email,
-            FirstName = dto.FirstName,
-            LastName = dto.LastName,
-            PhoneNumber = dto.Phone
-        };
-
-        var result = await _userManager.CreateAsync(user, dto.Password);
-
-        if (result.Succeeded)
-        {
-            await _userManager.AddToRoleAsync(user, "RegularUser");
-        }
-
+        var result = await _userManager.AddToRoleAsync(user, role);
         return result.Succeeded;
     }
 
-
-    public UserRepository(UserManager<ApplicationUser> userManager, JwtTokenGenerator jwtTokenGenerator)
+    public async Task<bool> RemoveFromRoleAsync(ApplicationUser user, string role)
     {
-        _userManager = userManager;
-        _jwtTokenGenerator = jwtTokenGenerator;
-    }
-
-    public async Task<bool> UpdateUserAsync(ApplicationUser user)
-    {
-        var result = await _userManager.UpdateAsync(user);
+        var result = await _userManager.RemoveFromRoleAsync(user, role);
         return result.Succeeded;
     }
 
-    public async Task<(string token, string role)> LoginWithRoleAsync(LoginDto dto)
+    public async Task<bool> CheckPasswordAsync(ApplicationUser user, string password)
     {
-        ApplicationUser user = null;
+        return await _userManager.CheckPasswordAsync(user, password);
+    }
 
-        if (!string.IsNullOrWhiteSpace(dto.Email))
-        {
-            user = await _userManager.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
-        }
+    public async Task<ApplicationUser> FindByEmailAsync(string email)
+    {
+        return await _userManager.FindByEmailAsync(email);
+    }
 
-        if (user == null && !string.IsNullOrWhiteSpace(dto.UserName))
-        {
-            user = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == dto.UserName);
-        }
-
-        if (user == null || !await _userManager.CheckPasswordAsync(user, dto.Password))
-            return (null, null);
-
-        var roles = await _userManager.GetRolesAsync(user);
-        var role = roles.FirstOrDefault(); // Antar att användaren bara har en roll
-
-        var token = _jwtTokenGenerator.GenerateToken(user, role);
-        return (token, role);
+    public async Task<ApplicationUser> FindByUsernameAsync(string username)
+    {
+        return await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == username);
     }
 }
-
