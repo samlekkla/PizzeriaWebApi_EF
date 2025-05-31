@@ -19,7 +19,6 @@ namespace PizzeriaWebApi_EF.Data.Entities
         [Required]
         public int OrderID { get; set; }
 
-        [Required]
         public Order Order { get; set; }
     }
 }
