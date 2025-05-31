@@ -42,7 +42,7 @@ public class OrderRepository
         return orders.Sum(o => o.Items.Sum(i => i.Quantity * 10));
     }
 
-    public async Task<Order> GetOrderByIdAsync(int orderId)
+    public async Task<Order?> GetOrderByIdAsync(int orderId)
     {
         return await _context.Orders.FindAsync(orderId);
     }

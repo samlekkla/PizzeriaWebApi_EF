@@ -33,7 +33,7 @@ public class UserRepository
         return await _userManager.Users.FirstOrDefaultAsync(u => u.Id == userId);
     }
 
-    public async Task<AdminUser> GetAdminUserByIdAsync(string userId)
+    public async Task<AdminUser?> GetAdminUserByIdAsync(string userId)
     {
         return await _userManager.Users
             .Where(u => u.Id == userId && EF.Property<string>(u, "Discriminator") == "AdminUser")
@@ -41,7 +41,7 @@ public class UserRepository
             .FirstOrDefaultAsync();
     }
 
-    public async Task<RegularUser> GetRegularUserByIdAsync(string userId)
+    public async Task<RegularUser?> GetRegularUserByIdAsync(string userId)
     {
         return await _userManager.Users
             .Where(u => u.Id == userId && EF.Property<string>(u, "Discriminator") == "RegularUser")
@@ -77,12 +77,12 @@ public class UserRepository
         return await _userManager.CheckPasswordAsync(user, password);
     }
 
-    public async Task<ApplicationUser> FindByEmailAsync(string email)
+    public async Task<ApplicationUser?> FindByEmailAsync(string email)
     {
         return await _userManager.FindByEmailAsync(email);
     }
 
-    public async Task<ApplicationUser> FindByUsernameAsync(string username)
+    public async Task<ApplicationUser?> FindByUsernameAsync(string username)
     {
         return await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == username);
     }

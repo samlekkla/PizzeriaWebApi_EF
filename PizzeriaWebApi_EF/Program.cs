@@ -18,6 +18,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // JWT-Installation
 var jwtKey = builder.Configuration["Jwt:Key"];
+
+if (string.IsNullOrWhiteSpace(jwtKey))
+    throw new InvalidOperationException("JWT key is missing in configuration (Jwt:Key).");
+
 var key = Encoding.UTF8.GetBytes(jwtKey);
 
 builder.Services.AddControllers()
@@ -141,9 +145,6 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
+app.MapControllers();
 
 app.Run();

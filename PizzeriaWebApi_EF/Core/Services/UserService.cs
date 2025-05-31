@@ -86,17 +86,17 @@ public class UserService : IUserService
         return await _userRepository.UpdateUserAsync(user);
     }
 
-    public async Task<ApplicationUser> GetUserByIdAsync(string userId)
+    public async Task<ApplicationUser?> GetUserByIdAsync(string userId)
     {
         return await _userRepository.GetUserByIdAsync(userId);
     }
 
-    public async Task<AdminUser> GetAdminUserByIdAsync(string userId)
+    public async Task<AdminUser?> GetAdminUserByIdAsync(string userId)
     {
         return await _userRepository.GetAdminUserByIdAsync(userId);
     }
 
-    public async Task<RegularUser> GetRegularUserByIdAsync(string userId)
+    public async Task<RegularUser?> GetRegularUserByIdAsync(string userId)
     {
         return await _userRepository.GetRegularUserByIdAsync(userId);
     }

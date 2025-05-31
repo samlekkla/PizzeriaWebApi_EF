@@ -57,8 +57,9 @@ public class AdminController : ControllerBase
     public async Task<IActionResult> UpdateAdmin([FromBody] AdminUserDto dto)
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-        // ⬇ Använd rätt metod nu
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized("User ID not found in token");
+        // Använd rätt metod nu
         var adminUser = await _userRepository.GetAdminUserByIdAsync(userId);
 
         if (adminUser == null)

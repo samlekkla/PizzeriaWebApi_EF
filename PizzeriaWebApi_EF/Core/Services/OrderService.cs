@@ -22,8 +22,8 @@ public class OrderService : IOrderService
 
     public async Task CreateOrderAsync(string userId, List<DishOrderItem> itemsDto)
     {
-        var user = await _userRepository.GetUserByIdAsync(userId);
-        if (user == null) throw new Exception("User not found");
+        var user = await _userRepository.GetUserByIdAsync(userId)
+            ?? throw new Exception("User not found");
 
         var roles = await _userRepository.GetRolesAsync(user);
         bool isPremium = roles.Contains("PremiumUser");
@@ -31,32 +31,34 @@ public class OrderService : IOrderService
         bool usedBonus = false;
         decimal totalPrice = 0;
 
-        // Skapa Order först
         var order = new Order
         {
             UserID = userId,
             CreatedAt = DateTime.UtcNow,
-            Items = new List<OrderItem>(), // initial tom lista
+            Items = new List<OrderItem>(),
             Status = OrderStatus.Pending
         };
 
         foreach (var itemDto in itemsDto)
         {
+            if (itemDto == null) continue;
+
             var dish = await _context.Dishes.FindAsync(itemDto.DishID);
             if (dish == null) continue;
 
             totalPrice += dish.Price * itemDto.Quantity;
 
-            var orderItem = new OrderItem
+            order.Items.Add(new OrderItem
             {
                 DishID = itemDto.DishID,
                 Quantity = itemDto.Quantity,
                 Dish = dish,
-                Order = order // viktig del
-            };
-
-            order.Items.Add(orderItem);
+                Order = order
+            });
         }
+
+        if (!order.Items.Any())
+            throw new Exception("No valid dishes found for the order.");
 
         if (isPremium && order.Items.Sum(i => i.Quantity) >= 3)
         {
@@ -88,10 +90,10 @@ public class OrderService : IOrderService
         await _context.SaveChangesAsync();
     }
 
-
-    public async Task<UserOrdersSummaryDto> GetOrdersByUserIdAsync(string userId)
+    public async Task<UserOrdersSummaryDto?> GetOrdersByUserIdAsync(string userId)
     {
         var orders = await _orderRepo.GetOrdersByUserIdAsync(userId);
+
         var orderDtos = orders.Select(o => new OrderResponseDto
         {
             OrderID = o.OrderID,
@@ -101,15 +103,17 @@ public class OrderService : IOrderService
             Status = o.Status.ToString(),
             Items = o.Items.Select(i => new OrderItemDto
             {
-                DishName = i.Dish.DishName,
+                DishName = i.Dish?.DishName ?? "Unknown",
                 Quantity = i.Quantity,
-                UnitPrice = i.Dish.Price
+                UnitPrice = i.Dish?.Price ?? 0
             }).ToList()
         }).ToList();
 
         var totalSpent = orderDtos.Sum(o => o.TotalPrice);
 
-        var user = await _userRepository.GetUserByIdAsync(userId);
+        var user = await _userRepository.GetUserByIdAsync(userId)
+            ?? throw new Exception("User not found");
+
         var roles = await _userRepository.GetRolesAsync(user);
         int bonusPoints = 0;
 
