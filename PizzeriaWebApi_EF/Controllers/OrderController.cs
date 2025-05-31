@@ -20,6 +20,9 @@ public class OrderController : ControllerBase
     public async Task<IActionResult> CreateOrder([FromBody] OrderDto dto)
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized("User ID not found in token");
+
         await _orderService.CreateOrderAsync(userId, dto.Items);
         return Ok("Order placed");
     }
@@ -28,6 +31,9 @@ public class OrderController : ControllerBase
     public async Task<IActionResult> GetMyOrders()
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized("User ID not found in token");
+
         var result = await _orderService.GetOrdersByUserIdAsync(userId);
         return Ok(result);
     }
