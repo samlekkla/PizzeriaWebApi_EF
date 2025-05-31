@@ -18,15 +18,16 @@ namespace PizzeriaWebApi_EF.Middleware
 
         public string GenerateToken(ApplicationUser user, string role)
         {
-            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
+            var keyString = _configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT key is not configured.");
+            var key = Encoding.UTF8.GetBytes(keyString);
 
             var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.NameIdentifier, user.Id),
-            new Claim(ClaimTypes.Name, user.UserName),
-            new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, role)
-        };
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id ?? string.Empty),
+                new Claim(ClaimTypes.Name, user.UserName ?? string.Empty),
+                new Claim(ClaimTypes.Email, user.Email ?? string.Empty),
+                new Claim(ClaimTypes.Role, role ?? string.Empty)
+            };
 
             if (user is AdminUser)
             {

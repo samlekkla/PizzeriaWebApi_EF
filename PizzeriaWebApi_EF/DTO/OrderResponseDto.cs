@@ -7,6 +7,6 @@
         public decimal TotalPrice { get; set; }
         public List<OrderItemDto> Items { get; set; } = new();
         public bool UsedBonus { get; set; }
-        public string Status { get; set; }
+        public required string Status { get; set; }
     }
 }

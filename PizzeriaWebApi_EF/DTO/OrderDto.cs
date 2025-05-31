@@ -6,6 +6,6 @@ namespace PizzeriaWebApi_EF.DTO
     public class OrderDto
     {
         [Required]
-        public List<DishOrderItem> Items { get; set; }
+        public required List<DishOrderItem> Items { get; set; }
     }
 }
