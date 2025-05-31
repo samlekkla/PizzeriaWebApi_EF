@@ -13,6 +13,8 @@ using System.Text.Json.Serialization;
 using TomasosPizzeria_API.Data.Interfaces;
 using TomasosPizzeria_API.Data.Repos;
 using TomasosPizzeria_API.Services;
+using Swashbuckle.AspNetCore.Swagger;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -146,5 +148,22 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapGet("/export-swagger", async (ISwaggerProvider swaggerProvider) =>
+{
+    var swaggerDoc = swaggerProvider.GetSwagger("v1");
+
+    var json = System.Text.Json.JsonSerializer.Serialize(swaggerDoc, new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        ReferenceHandler = ReferenceHandler.IgnoreCycles
+    });
+
+    var outputPath = Path.Combine(Directory.GetCurrentDirectory(), "swagger.json");
+    await File.WriteAllTextAsync(outputPath, json);
+
+    return Results.Ok($"swagger.json sparad till {outputPath}");
+});
+
 
 app.Run();
