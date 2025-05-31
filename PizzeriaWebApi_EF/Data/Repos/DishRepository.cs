@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PizzeriaWebApi_EF.Data;
-using PizzeriaWebApi_EF.Data.Entities;
-
-namespace TomasosPizzeria_API.Data.Repos
+﻿namespace TomasosPizzeria_API.Data.Repos
 {
+    using Microsoft.EntityFrameworkCore;
+    using PizzeriaWebApi_EF.Data;
+    using PizzeriaWebApi_EF.Data.Entities;
+
     public class DishRepository
     {
         private readonly ApplicationContext _context;
@@ -21,7 +21,7 @@ namespace TomasosPizzeria_API.Data.Repos
                 .ToListAsync();
         }
 
-        public async Task<Dish> GetDishByIdAsync(int id)
+        public async Task<Dish?> GetDishByIdAsync(int id)
         {
             return await _context.Dishes
                 .Include(d => d.Category)

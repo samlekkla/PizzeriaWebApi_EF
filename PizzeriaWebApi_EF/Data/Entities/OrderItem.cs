@@ -11,7 +11,7 @@ namespace PizzeriaWebApi_EF.Data.Entities
         public int DishID { get; set; }
 
         [Required]
-        public Dish Dish { get; set; }
+        public required Dish Dish { get; set; }
 
         [Range(1, 100)]
         public int Quantity { get; set; }
@@ -19,6 +19,7 @@ namespace PizzeriaWebApi_EF.Data.Entities
         [Required]
         public int OrderID { get; set; }
 
-        public Order Order { get; set; }
+        [Required]
+        public required Order Order { get; set; }
     }
 }

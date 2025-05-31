@@ -8,7 +8,7 @@ namespace PizzeriaWebApi_EF.Data.Entities
         public int IngredientID { get; set; }
 
         [Required, StringLength(51)]
-        public string IngredientName { get; set; }
+        public required string IngredientName { get; set; }
 
         public List<Dish> Dishes { get; set; } = new();
     }

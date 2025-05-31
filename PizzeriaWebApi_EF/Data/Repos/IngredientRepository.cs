@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PizzeriaWebApi_EF.Data;
-using PizzeriaWebApi_EF.Data.Entities;
-
-namespace PizzeriaWebApi_EF.Services
+﻿namespace PizzeriaWebApi_EF.Services
 {
+    using Microsoft.EntityFrameworkCore;
+    using PizzeriaWebApi_EF.Data;
+    using PizzeriaWebApi_EF.Data.Entities;
+
     public class IngredientRepository
     {
         private readonly ApplicationContext _context;
@@ -30,7 +30,7 @@ namespace PizzeriaWebApi_EF.Services
             return await _context.Ingredients.Include(i => i.Dishes).ToListAsync();
         }
 
-        public async Task<Ingredient> GetIngredientByIdAsync(int id)
+        public async Task<Ingredient?> GetIngredientByIdAsync(int id)
         {
             return await _context.Ingredients.FindAsync(id);
         }
