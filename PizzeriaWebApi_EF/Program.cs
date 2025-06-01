@@ -155,20 +155,16 @@ internal class Program
         {
             var swaggerDoc = swaggerProvider.GetSwagger("v1");
 
-            using var stream = new MemoryStream();
-            using var writer = new StreamWriter(stream);
-
-            var jsonWriter = new OpenApiJsonWriter(writer); // INTE i using
-
-            swaggerDoc.SerializeAsV3(jsonWriter); // Viktig metod för korrekt OpenAPI 3-export
-            writer.Flush();
-
-            var json = Encoding.UTF8.GetString(stream.ToArray());
             var outputPath = Path.Combine(Directory.GetCurrentDirectory(), "swagger.json");
 
-            File.WriteAllText(outputPath, json);
+            using var fileStream = new FileStream(outputPath, FileMode.Create);
+            using var writer = new StreamWriter(fileStream);
+            var jsonWriter = new OpenApiJsonWriter(writer);
 
-            return Results.Ok("Swagger export complete.");
+            swaggerDoc.SerializeAsV3(jsonWriter);
+            writer.Flush(); // Viktigt!
+
+            return Results.Ok($"Swagger JSON exported to: {outputPath}");
         });
 
         app.Run();
