@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.Writers;
+using Microsoft.OpenApi.Extensions;
 using PizzeriaWebApi_EF.Data;
 using PizzeriaWebApi_EF.Data.Interfaces;
 using PizzeriaWebApi_EF.Identity;
@@ -15,6 +17,7 @@ using TomasosPizzeria_API.Services;
 using Swashbuckle.AspNetCore.Swagger;
 using Newtonsoft.Json;
 using PizzeriaWebApi_EF.Middleware;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -149,7 +152,8 @@ app.MapGet("/export-swagger", async (ISwaggerProvider swaggerProvider) =>
 {
     var swaggerDoc = swaggerProvider.GetSwagger("v1");
 
-    var json = JsonConvert.SerializeObject(swaggerDoc, Formatting.Indented);
+    var json = Newtonsoft.Json.JsonConvert.SerializeObject(swaggerDoc, Newtonsoft.Json.Formatting.Indented);
+
     var outputPath = Path.Combine(Directory.GetCurrentDirectory(), "swagger.json");
     await File.WriteAllTextAsync(outputPath, json);
 
