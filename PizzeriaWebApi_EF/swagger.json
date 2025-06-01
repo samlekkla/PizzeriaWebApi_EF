@@ -1,3854 +1,608 @@
 {
-  "Workspace": null,
-  "Info": {
-    "Title": "Tomasos API",
-    "Description": null,
-    "Version": "v1",
-    "TermsOfService": null,
-    "Contact": null,
-    "License": null,
-    "Extensions": {}
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Tomasos API",
+    "version": "v1"
   },
-  "Servers": [],
-  "Paths": {
+  "paths": {
     "/api/Admin/create-admin": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Post": {
-          "Tags": [
-            {
-              "Name": "Admin",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "AdminUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/AdminUserDto",
-                    "ReferenceV2": "#/definitions/AdminUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "AdminUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/AdminUserDto",
-                    "ReferenceV2": "#/definitions/AdminUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "AdminUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/AdminUserDto",
-                    "ReferenceV2": "#/definitions/AdminUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUserDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUserDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUserDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/Admin/me": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Get": {
-          "Tags": [
-            {
-              "Name": "Admin",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": null,
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/Admin/update-admin": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Put": {
-          "Tags": [
-            {
-              "Name": "Admin",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "AdminUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/AdminUserDto",
-                    "ReferenceV2": "#/definitions/AdminUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "AdminUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/AdminUserDto",
-                    "ReferenceV2": "#/definitions/AdminUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "AdminUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/AdminUserDto",
-                    "ReferenceV2": "#/definitions/AdminUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUserDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUserDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUserDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/AdminOrder/order-status/{orderId}": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Put": {
-          "Tags": [
-            {
-              "Name": "AdminOrder",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+      "put": {
+        "tags": [
+          "AdminOrder"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [
-            {
-              "_style": null,
-              "UnresolvedReference": false,
-              "Reference": null,
-              "Name": "orderId",
-              "In": 2,
-              "Description": null,
-              "Required": true,
-              "Deprecated": false,
-              "AllowEmptyValue": false,
-              "Style": 3,
-              "Explode": false,
-              "AllowReserved": false,
-              "Schema": {
-                "Title": null,
-                "Type": "integer",
-                "Format": "int32",
-                "Description": null,
-                "Maximum": null,
-                "ExclusiveMaximum": null,
-                "Minimum": null,
-                "ExclusiveMinimum": null,
-                "MaxLength": null,
-                "MinLength": null,
-                "Pattern": null,
-                "MultipleOf": null,
-                "Default": null,
-                "ReadOnly": false,
-                "WriteOnly": false,
-                "AllOf": [],
-                "OneOf": [],
-                "AnyOf": [],
-                "Not": null,
-                "Required": [],
-                "Items": null,
-                "MaxItems": null,
-                "MinItems": null,
-                "UniqueItems": null,
-                "Properties": {},
-                "MaxProperties": null,
-                "MinProperties": null,
-                "AdditionalPropertiesAllowed": true,
-                "AdditionalProperties": null,
-                "Discriminator": null,
-                "Example": null,
-                "Enum": [],
-                "Nullable": false,
-                "ExternalDocs": null,
-                "Deprecated": false,
-                "Xml": null,
-                "Extensions": {},
-                "UnresolvedReference": false,
-                "Reference": null,
-                "Annotations": null
-              },
-              "Examples": {},
-              "Example": null,
-              "Content": {},
-              "Extensions": {}
-            }
-          ],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": "string",
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": null,
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": "string",
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": null,
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": "string",
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": null,
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/AdminOrder/order/{orderId}": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Get": {
-          "Tags": [
-            {
-              "Name": "AdminOrder",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+      "get": {
+        "tags": [
+          "AdminOrder"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [
-            {
-              "_style": null,
-              "UnresolvedReference": false,
-              "Reference": null,
-              "Name": "orderId",
-              "In": 2,
-              "Description": null,
-              "Required": true,
-              "Deprecated": false,
-              "AllowEmptyValue": false,
-              "Style": 3,
-              "Explode": false,
-              "AllowReserved": false,
-              "Schema": {
-                "Title": null,
-                "Type": "integer",
-                "Format": "int32",
-                "Description": null,
-                "Maximum": null,
-                "ExclusiveMaximum": null,
-                "Minimum": null,
-                "ExclusiveMinimum": null,
-                "MaxLength": null,
-                "MinLength": null,
-                "Pattern": null,
-                "MultipleOf": null,
-                "Default": null,
-                "ReadOnly": false,
-                "WriteOnly": false,
-                "AllOf": [],
-                "OneOf": [],
-                "AnyOf": [],
-                "Not": null,
-                "Required": [],
-                "Items": null,
-                "MaxItems": null,
-                "MinItems": null,
-                "UniqueItems": null,
-                "Properties": {},
-                "MaxProperties": null,
-                "MinProperties": null,
-                "AdditionalPropertiesAllowed": true,
-                "AdditionalProperties": null,
-                "Discriminator": null,
-                "Example": null,
-                "Enum": [],
-                "Nullable": false,
-                "ExternalDocs": null,
-                "Deprecated": false,
-                "Xml": null,
-                "Extensions": {},
-                "UnresolvedReference": false,
-                "Reference": null,
-                "Annotations": null
-              },
-              "Examples": {},
-              "Example": null,
-              "Content": {},
-              "Extensions": {}
-            }
-          ],
-          "RequestBody": null,
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
-        },
-        "Delete": {
-          "Tags": [
-            {
-              "Name": "AdminOrder",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [
-            {
-              "_style": null,
-              "UnresolvedReference": false,
-              "Reference": null,
-              "Name": "orderId",
-              "In": 2,
-              "Description": null,
-              "Required": true,
-              "Deprecated": false,
-              "AllowEmptyValue": false,
-              "Style": 3,
-              "Explode": false,
-              "AllowReserved": false,
-              "Schema": {
-                "Title": null,
-                "Type": "integer",
-                "Format": "int32",
-                "Description": null,
-                "Maximum": null,
-                "ExclusiveMaximum": null,
-                "Minimum": null,
-                "ExclusiveMinimum": null,
-                "MaxLength": null,
-                "MinLength": null,
-                "Pattern": null,
-                "MultipleOf": null,
-                "Default": null,
-                "ReadOnly": false,
-                "WriteOnly": false,
-                "AllOf": [],
-                "OneOf": [],
-                "AnyOf": [],
-                "Not": null,
-                "Required": [],
-                "Items": null,
-                "MaxItems": null,
-                "MinItems": null,
-                "UniqueItems": null,
-                "Properties": {},
-                "MaxProperties": null,
-                "MinProperties": null,
-                "AdditionalPropertiesAllowed": true,
-                "AdditionalProperties": null,
-                "Discriminator": null,
-                "Example": null,
-                "Enum": [],
-                "Nullable": false,
-                "ExternalDocs": null,
-                "Deprecated": false,
-                "Xml": null,
-                "Extensions": {},
-                "UnresolvedReference": false,
-                "Reference": null,
-                "Annotations": null
-              },
-              "Examples": {},
-              "Example": null,
-              "Content": {},
-              "Extensions": {}
-            }
-          ],
-          "RequestBody": null,
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
       },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      "delete": {
+        "tags": [
+          "AdminOrder"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/api/AdminUser/promote/{userId}": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Post": {
-          "Tags": [
-            {
-              "Name": "AdminUser",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+      "post": {
+        "tags": [
+          "AdminUser"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [
-            {
-              "_style": null,
-              "UnresolvedReference": false,
-              "Reference": null,
-              "Name": "userId",
-              "In": 2,
-              "Description": null,
-              "Required": true,
-              "Deprecated": false,
-              "AllowEmptyValue": false,
-              "Style": 3,
-              "Explode": false,
-              "AllowReserved": false,
-              "Schema": {
-                "Title": null,
-                "Type": "string",
-                "Format": null,
-                "Description": null,
-                "Maximum": null,
-                "ExclusiveMaximum": null,
-                "Minimum": null,
-                "ExclusiveMinimum": null,
-                "MaxLength": null,
-                "MinLength": null,
-                "Pattern": null,
-                "MultipleOf": null,
-                "Default": null,
-                "ReadOnly": false,
-                "WriteOnly": false,
-                "AllOf": [],
-                "OneOf": [],
-                "AnyOf": [],
-                "Not": null,
-                "Required": [],
-                "Items": null,
-                "MaxItems": null,
-                "MinItems": null,
-                "UniqueItems": null,
-                "Properties": {},
-                "MaxProperties": null,
-                "MinProperties": null,
-                "AdditionalPropertiesAllowed": true,
-                "AdditionalProperties": null,
-                "Discriminator": null,
-                "Example": null,
-                "Enum": [],
-                "Nullable": false,
-                "ExternalDocs": null,
-                "Deprecated": false,
-                "Xml": null,
-                "Extensions": {},
-                "UnresolvedReference": false,
-                "Reference": null,
-                "Annotations": null
-              },
-              "Examples": {},
-              "Example": null,
-              "Content": {},
-              "Extensions": {}
-            }
-          ],
-          "RequestBody": null,
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/AdminUser/demote/{userId}": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Post": {
-          "Tags": [
-            {
-              "Name": "AdminUser",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+      "post": {
+        "tags": [
+          "AdminUser"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [
-            {
-              "_style": null,
-              "UnresolvedReference": false,
-              "Reference": null,
-              "Name": "userId",
-              "In": 2,
-              "Description": null,
-              "Required": true,
-              "Deprecated": false,
-              "AllowEmptyValue": false,
-              "Style": 3,
-              "Explode": false,
-              "AllowReserved": false,
-              "Schema": {
-                "Title": null,
-                "Type": "string",
-                "Format": null,
-                "Description": null,
-                "Maximum": null,
-                "ExclusiveMaximum": null,
-                "Minimum": null,
-                "ExclusiveMinimum": null,
-                "MaxLength": null,
-                "MinLength": null,
-                "Pattern": null,
-                "MultipleOf": null,
-                "Default": null,
-                "ReadOnly": false,
-                "WriteOnly": false,
-                "AllOf": [],
-                "OneOf": [],
-                "AnyOf": [],
-                "Not": null,
-                "Required": [],
-                "Items": null,
-                "MaxItems": null,
-                "MinItems": null,
-                "UniqueItems": null,
-                "Properties": {},
-                "MaxProperties": null,
-                "MinProperties": null,
-                "AdditionalPropertiesAllowed": true,
-                "AdditionalProperties": null,
-                "Discriminator": null,
-                "Example": null,
-                "Enum": [],
-                "Nullable": false,
-                "ExternalDocs": null,
-                "Deprecated": false,
-                "Xml": null,
-                "Extensions": {},
-                "UnresolvedReference": false,
-                "Reference": null,
-                "Annotations": null
-              },
-              "Examples": {},
-              "Example": null,
-              "Content": {},
-              "Extensions": {}
-            }
-          ],
-          "RequestBody": null,
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/Category": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Post": {
-          "Tags": [
-            {
-              "Name": "Category",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "CategoryDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/CategoryDto",
-                    "ReferenceV2": "#/definitions/CategoryDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "CategoryDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/CategoryDto",
-                    "ReferenceV2": "#/definitions/CategoryDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "CategoryDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/CategoryDto",
-                    "ReferenceV2": "#/definitions/CategoryDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/Category/{id}": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Put": {
-          "Tags": [
-            {
-              "Name": "Category",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+      "put": {
+        "tags": [
+          "Category"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [
-            {
-              "_style": null,
-              "UnresolvedReference": false,
-              "Reference": null,
-              "Name": "id",
-              "In": 2,
-              "Description": null,
-              "Required": true,
-              "Deprecated": false,
-              "AllowEmptyValue": false,
-              "Style": 3,
-              "Explode": false,
-              "AllowReserved": false,
-              "Schema": {
-                "Title": null,
-                "Type": "integer",
-                "Format": "int32",
-                "Description": null,
-                "Maximum": null,
-                "ExclusiveMaximum": null,
-                "Minimum": null,
-                "ExclusiveMinimum": null,
-                "MaxLength": null,
-                "MinLength": null,
-                "Pattern": null,
-                "MultipleOf": null,
-                "Default": null,
-                "ReadOnly": false,
-                "WriteOnly": false,
-                "AllOf": [],
-                "OneOf": [],
-                "AnyOf": [],
-                "Not": null,
-                "Required": [],
-                "Items": null,
-                "MaxItems": null,
-                "MinItems": null,
-                "UniqueItems": null,
-                "Properties": {},
-                "MaxProperties": null,
-                "MinProperties": null,
-                "AdditionalPropertiesAllowed": true,
-                "AdditionalProperties": null,
-                "Discriminator": null,
-                "Example": null,
-                "Enum": [],
-                "Nullable": false,
-                "ExternalDocs": null,
-                "Deprecated": false,
-                "Xml": null,
-                "Extensions": {},
-                "UnresolvedReference": false,
-                "Reference": null,
-                "Annotations": null
-              },
-              "Examples": {},
-              "Example": null,
-              "Content": {},
-              "Extensions": {}
-            }
-          ],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "CategoryDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/CategoryDto",
-                    "ReferenceV2": "#/definitions/CategoryDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "CategoryDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/CategoryDto",
-                    "ReferenceV2": "#/definitions/CategoryDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "CategoryDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/CategoryDto",
-                    "ReferenceV2": "#/definitions/CategoryDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/Dish": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Post": {
-          "Tags": [
-            {
-              "Name": "Dish",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "DishDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/DishDto",
-                    "ReferenceV2": "#/definitions/DishDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "DishDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/DishDto",
-                    "ReferenceV2": "#/definitions/DishDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "DishDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/DishDto",
-                    "ReferenceV2": "#/definitions/DishDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+      "post": {
+        "tags": [
+          "Dish"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DishDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DishDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DishDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/Dish/{id}": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Put": {
-          "Tags": [
-            {
-              "Name": "Dish",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+      "put": {
+        "tags": [
+          "Dish"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [
-            {
-              "_style": null,
-              "UnresolvedReference": false,
-              "Reference": null,
-              "Name": "id",
-              "In": 2,
-              "Description": null,
-              "Required": true,
-              "Deprecated": false,
-              "AllowEmptyValue": false,
-              "Style": 3,
-              "Explode": false,
-              "AllowReserved": false,
-              "Schema": {
-                "Title": null,
-                "Type": "integer",
-                "Format": "int32",
-                "Description": null,
-                "Maximum": null,
-                "ExclusiveMaximum": null,
-                "Minimum": null,
-                "ExclusiveMinimum": null,
-                "MaxLength": null,
-                "MinLength": null,
-                "Pattern": null,
-                "MultipleOf": null,
-                "Default": null,
-                "ReadOnly": false,
-                "WriteOnly": false,
-                "AllOf": [],
-                "OneOf": [],
-                "AnyOf": [],
-                "Not": null,
-                "Required": [],
-                "Items": null,
-                "MaxItems": null,
-                "MinItems": null,
-                "UniqueItems": null,
-                "Properties": {},
-                "MaxProperties": null,
-                "MinProperties": null,
-                "AdditionalPropertiesAllowed": true,
-                "AdditionalProperties": null,
-                "Discriminator": null,
-                "Example": null,
-                "Enum": [],
-                "Nullable": false,
-                "ExternalDocs": null,
-                "Deprecated": false,
-                "Xml": null,
-                "Extensions": {},
-                "UnresolvedReference": false,
-                "Reference": null,
-                "Annotations": null
-              },
-              "Examples": {},
-              "Example": null,
-              "Content": {},
-              "Extensions": {}
-            }
-          ],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "DishDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/DishDto",
-                    "ReferenceV2": "#/definitions/DishDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "DishDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/DishDto",
-                    "ReferenceV2": "#/definitions/DishDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "DishDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/DishDto",
-                    "ReferenceV2": "#/definitions/DishDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DishDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DishDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DishDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/Ingredient": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Post": {
-          "Tags": [
-            {
-              "Name": "Ingredient",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "IngredientDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/IngredientDto",
-                    "ReferenceV2": "#/definitions/IngredientDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "IngredientDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/IngredientDto",
-                    "ReferenceV2": "#/definitions/IngredientDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "IngredientDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/IngredientDto",
-                    "ReferenceV2": "#/definitions/IngredientDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+      "post": {
+        "tags": [
+          "Ingredient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngredientDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngredientDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngredientDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/Ingredient/{id}": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Put": {
-          "Tags": [
-            {
-              "Name": "Ingredient",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+      "put": {
+        "tags": [
+          "Ingredient"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [
-            {
-              "_style": null,
-              "UnresolvedReference": false,
-              "Reference": null,
-              "Name": "id",
-              "In": 2,
-              "Description": null,
-              "Required": true,
-              "Deprecated": false,
-              "AllowEmptyValue": false,
-              "Style": 3,
-              "Explode": false,
-              "AllowReserved": false,
-              "Schema": {
-                "Title": null,
-                "Type": "integer",
-                "Format": "int32",
-                "Description": null,
-                "Maximum": null,
-                "ExclusiveMaximum": null,
-                "Minimum": null,
-                "ExclusiveMinimum": null,
-                "MaxLength": null,
-                "MinLength": null,
-                "Pattern": null,
-                "MultipleOf": null,
-                "Default": null,
-                "ReadOnly": false,
-                "WriteOnly": false,
-                "AllOf": [],
-                "OneOf": [],
-                "AnyOf": [],
-                "Not": null,
-                "Required": [],
-                "Items": null,
-                "MaxItems": null,
-                "MinItems": null,
-                "UniqueItems": null,
-                "Properties": {},
-                "MaxProperties": null,
-                "MinProperties": null,
-                "AdditionalPropertiesAllowed": true,
-                "AdditionalProperties": null,
-                "Discriminator": null,
-                "Example": null,
-                "Enum": [],
-                "Nullable": false,
-                "ExternalDocs": null,
-                "Deprecated": false,
-                "Xml": null,
-                "Extensions": {},
-                "UnresolvedReference": false,
-                "Reference": null,
-                "Annotations": null
-              },
-              "Examples": {},
-              "Example": null,
-              "Content": {},
-              "Extensions": {}
-            }
-          ],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "IngredientDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/IngredientDto",
-                    "ReferenceV2": "#/definitions/IngredientDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "IngredientDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/IngredientDto",
-                    "ReferenceV2": "#/definitions/IngredientDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "IngredientDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/IngredientDto",
-                    "ReferenceV2": "#/definitions/IngredientDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngredientDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngredientDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngredientDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/Login/login": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Post": {
-          "Tags": [
-            {
-              "Name": "Login",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "LoginDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/LoginDto",
-                    "ReferenceV2": "#/definitions/LoginDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "LoginDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/LoginDto",
-                    "ReferenceV2": "#/definitions/LoginDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "LoginDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/LoginDto",
-                    "ReferenceV2": "#/definitions/LoginDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/Order": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Post": {
-          "Tags": [
-            {
-              "Name": "Order",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "OrderDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/OrderDto",
-                    "ReferenceV2": "#/definitions/OrderDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "OrderDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/OrderDto",
-                    "ReferenceV2": "#/definitions/OrderDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "OrderDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/OrderDto",
-                    "ReferenceV2": "#/definitions/OrderDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
         },
-        "Get": {
-          "Tags": [
-            {
-              "Name": "Order",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": null,
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
       },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Get": {
-          "Tags": [
-            {
-              "Name": "PizzeriaWebApi_EF",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": null,
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+      "get": {
+        "tags": [
+          "PizzeriaWebApi_EF"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/export-swagger": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Get": {
-          "Tags": [
-            {
-              "Name": "PizzeriaWebApi_EF",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": null,
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+      "get": {
+        "tags": [
+          "PizzeriaWebApi_EF"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/RegularUser/register": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Post": {
-          "Tags": [
-            {
-              "Name": "RegularUser",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "RegularUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/RegularUserDto",
-                    "ReferenceV2": "#/definitions/RegularUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "RegularUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/RegularUserDto",
-                    "ReferenceV2": "#/definitions/RegularUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "RegularUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/RegularUserDto",
-                    "ReferenceV2": "#/definitions/RegularUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+      "post": {
+        "tags": [
+          "RegularUser"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegularUserDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegularUserDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegularUserDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/RegularUser/me": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Get": {
-          "Tags": [
-            {
-              "Name": "RegularUser",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": null,
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+      "get": {
+        "tags": [
+          "RegularUser"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     },
     "/api/RegularUser/update": {
-      "Summary": null,
-      "Description": null,
-      "Operations": {
-        "Put": {
-          "Tags": [
-            {
-              "Name": "RegularUser",
-              "Description": null,
-              "ExternalDocs": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
-            }
-          ],
-          "Summary": null,
-          "Description": null,
-          "ExternalDocs": null,
-          "OperationId": null,
-          "Parameters": [],
-          "RequestBody": {
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Description": null,
-            "Required": false,
-            "Content": {
-              "application/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "RegularUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/RegularUserDto",
-                    "ReferenceV2": "#/definitions/RegularUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "text/json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "RegularUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/RegularUserDto",
-                    "ReferenceV2": "#/definitions/RegularUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
-              },
-              "application/*+json": {
-                "Schema": {
-                  "Title": null,
-                  "Type": null,
-                  "Format": null,
-                  "Description": null,
-                  "Maximum": null,
-                  "ExclusiveMaximum": null,
-                  "Minimum": null,
-                  "ExclusiveMinimum": null,
-                  "MaxLength": null,
-                  "MinLength": null,
-                  "Pattern": null,
-                  "MultipleOf": null,
-                  "Default": null,
-                  "ReadOnly": false,
-                  "WriteOnly": false,
-                  "AllOf": [],
-                  "OneOf": [],
-                  "AnyOf": [],
-                  "Not": null,
-                  "Required": [],
-                  "Items": null,
-                  "MaxItems": null,
-                  "MinItems": null,
-                  "UniqueItems": null,
-                  "Properties": {},
-                  "MaxProperties": null,
-                  "MinProperties": null,
-                  "AdditionalPropertiesAllowed": true,
-                  "AdditionalProperties": null,
-                  "Discriminator": null,
-                  "Example": null,
-                  "Enum": [],
-                  "Nullable": false,
-                  "ExternalDocs": null,
-                  "Deprecated": false,
-                  "Xml": null,
-                  "Extensions": {},
-                  "UnresolvedReference": false,
-                  "Reference": {
-                    "IsFragrament": false,
-                    "ExternalResource": null,
-                    "Type": 0,
-                    "Id": "RegularUserDto",
-                    "IsExternal": false,
-                    "IsLocal": true,
-                    "HostDocument": null,
-                    "ReferenceV3": "#/components/schemas/RegularUserDto",
-                    "ReferenceV2": "#/definitions/RegularUserDto"
-                  },
-                  "Annotations": null
-                },
-                "Example": null,
-                "Examples": {},
-                "Encoding": {},
-                "Extensions": {}
+      "put": {
+        "tags": [
+          "RegularUser"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegularUserDto"
               }
             },
-            "Extensions": {}
-          },
-          "Responses": {
-            "200": {
-              "Description": "OK",
-              "Headers": {},
-              "Content": {},
-              "Links": {},
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegularUserDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegularUserDto"
+              }
             }
-          },
-          "Callbacks": {},
-          "Deprecated": false,
-          "Security": [],
-          "Servers": [],
-          "Extensions": {},
-          "Annotations": null
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
-      "Servers": [],
-      "Parameters": [],
-      "Extensions": {},
-      "UnresolvedReference": false,
-      "Reference": null
+      }
     }
   },
-  "Components": {
-    "Schemas": {
+  "components": {
+    "schemas": {
       "AdminUserDto": {
-        "Title": null,
-        "Type": "object",
-        "Format": null,
-        "Description": null,
-        "Maximum": null,
-        "ExclusiveMaximum": null,
-        "Minimum": null,
-        "ExclusiveMinimum": null,
-        "MaxLength": null,
-        "MinLength": null,
-        "Pattern": null,
-        "MultipleOf": null,
-        "Default": null,
-        "ReadOnly": false,
-        "WriteOnly": false,
-        "AllOf": [],
-        "OneOf": [],
-        "AnyOf": [],
-        "Not": null,
-        "Required": [
+        "required": [
           "email",
           "firstName",
           "lastName",
@@ -3856,1520 +610,196 @@
           "phone",
           "userName"
         ],
-        "Items": null,
-        "MaxItems": null,
-        "MinItems": null,
-        "UniqueItems": null,
-        "Properties": {
+        "type": "object",
+        "properties": {
           "userName": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "password": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "email": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "phone": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "firstName": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "lastName": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           }
         },
-        "MaxProperties": null,
-        "MinProperties": null,
-        "AdditionalPropertiesAllowed": false,
-        "AdditionalProperties": null,
-        "Discriminator": null,
-        "Example": null,
-        "Enum": [],
-        "Nullable": false,
-        "ExternalDocs": null,
-        "Deprecated": false,
-        "Xml": null,
-        "Extensions": {},
-        "UnresolvedReference": false,
-        "Reference": null,
-        "Annotations": null
+        "additionalProperties": false
       },
       "CategoryDto": {
-        "Title": null,
-        "Type": "object",
-        "Format": null,
-        "Description": null,
-        "Maximum": null,
-        "ExclusiveMaximum": null,
-        "Minimum": null,
-        "ExclusiveMinimum": null,
-        "MaxLength": null,
-        "MinLength": null,
-        "Pattern": null,
-        "MultipleOf": null,
-        "Default": null,
-        "ReadOnly": false,
-        "WriteOnly": false,
-        "AllOf": [],
-        "OneOf": [],
-        "AnyOf": [],
-        "Not": null,
-        "Required": [
+        "required": [
           "categoryName"
         ],
-        "Items": null,
-        "MaxItems": null,
-        "MinItems": null,
-        "UniqueItems": null,
-        "Properties": {
+        "type": "object",
+        "properties": {
           "categoryName": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           }
         },
-        "MaxProperties": null,
-        "MinProperties": null,
-        "AdditionalPropertiesAllowed": false,
-        "AdditionalProperties": null,
-        "Discriminator": null,
-        "Example": null,
-        "Enum": [],
-        "Nullable": false,
-        "ExternalDocs": null,
-        "Deprecated": false,
-        "Xml": null,
-        "Extensions": {},
-        "UnresolvedReference": false,
-        "Reference": null,
-        "Annotations": null
+        "additionalProperties": false
       },
       "DishDto": {
-        "Title": null,
-        "Type": "object",
-        "Format": null,
-        "Description": null,
-        "Maximum": null,
-        "ExclusiveMaximum": null,
-        "Minimum": null,
-        "ExclusiveMinimum": null,
-        "MaxLength": null,
-        "MinLength": null,
-        "Pattern": null,
-        "MultipleOf": null,
-        "Default": null,
-        "ReadOnly": false,
-        "WriteOnly": false,
-        "AllOf": [],
-        "OneOf": [],
-        "AnyOf": [],
-        "Not": null,
-        "Required": [
+        "required": [
           "description",
           "dishName",
           "ingredientIDs"
         ],
-        "Items": null,
-        "MaxItems": null,
-        "MinItems": null,
-        "UniqueItems": null,
-        "Properties": {
+        "type": "object",
+        "properties": {
           "dishName": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "price": {
-            "Title": null,
-            "Type": "number",
-            "Format": "double",
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": false,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "number",
+            "format": "double"
           },
           "description": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "categoryID": {
-            "Title": null,
-            "Type": "integer",
-            "Format": "int32",
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": false,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "integer",
+            "format": "int32"
           },
           "ingredientIDs": {
-            "Title": null,
-            "Type": "array",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": {
-              "Title": null,
-              "Type": "integer",
-              "Format": "int32",
-              "Description": null,
-              "Maximum": null,
-              "ExclusiveMaximum": null,
-              "Minimum": null,
-              "ExclusiveMinimum": null,
-              "MaxLength": null,
-              "MinLength": null,
-              "Pattern": null,
-              "MultipleOf": null,
-              "Default": null,
-              "ReadOnly": false,
-              "WriteOnly": false,
-              "AllOf": [],
-              "OneOf": [],
-              "AnyOf": [],
-              "Not": null,
-              "Required": [],
-              "Items": null,
-              "MaxItems": null,
-              "MinItems": null,
-              "UniqueItems": null,
-              "Properties": {},
-              "MaxProperties": null,
-              "MinProperties": null,
-              "AdditionalPropertiesAllowed": true,
-              "AdditionalProperties": null,
-              "Discriminator": null,
-              "Example": null,
-              "Enum": [],
-              "Nullable": false,
-              "ExternalDocs": null,
-              "Deprecated": false,
-              "Xml": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": null,
-              "Annotations": null
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
             },
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "nullable": true
           }
         },
-        "MaxProperties": null,
-        "MinProperties": null,
-        "AdditionalPropertiesAllowed": false,
-        "AdditionalProperties": null,
-        "Discriminator": null,
-        "Example": null,
-        "Enum": [],
-        "Nullable": false,
-        "ExternalDocs": null,
-        "Deprecated": false,
-        "Xml": null,
-        "Extensions": {},
-        "UnresolvedReference": false,
-        "Reference": null,
-        "Annotations": null
+        "additionalProperties": false
       },
       "DishOrderItem": {
-        "Title": null,
-        "Type": "object",
-        "Format": null,
-        "Description": null,
-        "Maximum": null,
-        "ExclusiveMaximum": null,
-        "Minimum": null,
-        "ExclusiveMinimum": null,
-        "MaxLength": null,
-        "MinLength": null,
-        "Pattern": null,
-        "MultipleOf": null,
-        "Default": null,
-        "ReadOnly": false,
-        "WriteOnly": false,
-        "AllOf": [],
-        "OneOf": [],
-        "AnyOf": [],
-        "Not": null,
-        "Required": [
+        "required": [
           "dishID"
         ],
-        "Items": null,
-        "MaxItems": null,
-        "MinItems": null,
-        "UniqueItems": null,
-        "Properties": {
+        "type": "object",
+        "properties": {
           "dishID": {
-            "Title": null,
-            "Type": "integer",
-            "Format": "int32",
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": false,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "integer",
+            "format": "int32"
           },
           "quantity": {
-            "Title": null,
-            "Type": "integer",
-            "Format": "int32",
-            "Description": null,
-            "Maximum": 100.0,
-            "ExclusiveMaximum": null,
-            "Minimum": 1.0,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": false,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
           }
         },
-        "MaxProperties": null,
-        "MinProperties": null,
-        "AdditionalPropertiesAllowed": false,
-        "AdditionalProperties": null,
-        "Discriminator": null,
-        "Example": null,
-        "Enum": [],
-        "Nullable": false,
-        "ExternalDocs": null,
-        "Deprecated": false,
-        "Xml": null,
-        "Extensions": {},
-        "UnresolvedReference": false,
-        "Reference": null,
-        "Annotations": null
+        "additionalProperties": false
       },
       "IngredientDto": {
-        "Title": null,
-        "Type": "object",
-        "Format": null,
-        "Description": null,
-        "Maximum": null,
-        "ExclusiveMaximum": null,
-        "Minimum": null,
-        "ExclusiveMinimum": null,
-        "MaxLength": null,
-        "MinLength": null,
-        "Pattern": null,
-        "MultipleOf": null,
-        "Default": null,
-        "ReadOnly": false,
-        "WriteOnly": false,
-        "AllOf": [],
-        "OneOf": [],
-        "AnyOf": [],
-        "Not": null,
-        "Required": [
+        "required": [
           "ingredientName"
         ],
-        "Items": null,
-        "MaxItems": null,
-        "MinItems": null,
-        "UniqueItems": null,
-        "Properties": {
+        "type": "object",
+        "properties": {
           "ingredientName": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           }
         },
-        "MaxProperties": null,
-        "MinProperties": null,
-        "AdditionalPropertiesAllowed": false,
-        "AdditionalProperties": null,
-        "Discriminator": null,
-        "Example": null,
-        "Enum": [],
-        "Nullable": false,
-        "ExternalDocs": null,
-        "Deprecated": false,
-        "Xml": null,
-        "Extensions": {},
-        "UnresolvedReference": false,
-        "Reference": null,
-        "Annotations": null
+        "additionalProperties": false
       },
       "LoginDto": {
-        "Title": null,
-        "Type": "object",
-        "Format": null,
-        "Description": null,
-        "Maximum": null,
-        "ExclusiveMaximum": null,
-        "Minimum": null,
-        "ExclusiveMinimum": null,
-        "MaxLength": null,
-        "MinLength": null,
-        "Pattern": null,
-        "MultipleOf": null,
-        "Default": null,
-        "ReadOnly": false,
-        "WriteOnly": false,
-        "AllOf": [],
-        "OneOf": [],
-        "AnyOf": [],
-        "Not": null,
-        "Required": [
+        "required": [
           "email",
           "password",
           "userName"
         ],
-        "Items": null,
-        "MaxItems": null,
-        "MinItems": null,
-        "UniqueItems": null,
-        "Properties": {
+        "type": "object",
+        "properties": {
           "email": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "userName": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "password": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           }
         },
-        "MaxProperties": null,
-        "MinProperties": null,
-        "AdditionalPropertiesAllowed": false,
-        "AdditionalProperties": null,
-        "Discriminator": null,
-        "Example": null,
-        "Enum": [],
-        "Nullable": false,
-        "ExternalDocs": null,
-        "Deprecated": false,
-        "Xml": null,
-        "Extensions": {},
-        "UnresolvedReference": false,
-        "Reference": null,
-        "Annotations": null
+        "additionalProperties": false
       },
       "OrderDto": {
-        "Title": null,
-        "Type": "object",
-        "Format": null,
-        "Description": null,
-        "Maximum": null,
-        "ExclusiveMaximum": null,
-        "Minimum": null,
-        "ExclusiveMinimum": null,
-        "MaxLength": null,
-        "MinLength": null,
-        "Pattern": null,
-        "MultipleOf": null,
-        "Default": null,
-        "ReadOnly": false,
-        "WriteOnly": false,
-        "AllOf": [],
-        "OneOf": [],
-        "AnyOf": [],
-        "Not": null,
-        "Required": [
+        "required": [
           "items"
         ],
-        "Items": null,
-        "MaxItems": null,
-        "MinItems": null,
-        "UniqueItems": null,
-        "Properties": {
+        "type": "object",
+        "properties": {
           "items": {
-            "Title": null,
-            "Type": "array",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": {
-              "Title": null,
-              "Type": null,
-              "Format": null,
-              "Description": null,
-              "Maximum": null,
-              "ExclusiveMaximum": null,
-              "Minimum": null,
-              "ExclusiveMinimum": null,
-              "MaxLength": null,
-              "MinLength": null,
-              "Pattern": null,
-              "MultipleOf": null,
-              "Default": null,
-              "ReadOnly": false,
-              "WriteOnly": false,
-              "AllOf": [],
-              "OneOf": [],
-              "AnyOf": [],
-              "Not": null,
-              "Required": [],
-              "Items": null,
-              "MaxItems": null,
-              "MinItems": null,
-              "UniqueItems": null,
-              "Properties": {},
-              "MaxProperties": null,
-              "MinProperties": null,
-              "AdditionalPropertiesAllowed": true,
-              "AdditionalProperties": null,
-              "Discriminator": null,
-              "Example": null,
-              "Enum": [],
-              "Nullable": false,
-              "ExternalDocs": null,
-              "Deprecated": false,
-              "Xml": null,
-              "Extensions": {},
-              "UnresolvedReference": false,
-              "Reference": {
-                "IsFragrament": false,
-                "ExternalResource": null,
-                "Type": 0,
-                "Id": "DishOrderItem",
-                "IsExternal": false,
-                "IsLocal": true,
-                "HostDocument": null,
-                "ReferenceV3": "#/components/schemas/DishOrderItem",
-                "ReferenceV2": "#/definitions/DishOrderItem"
-              },
-              "Annotations": null
-            },
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": false,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DishOrderItem"
+            }
           }
         },
-        "MaxProperties": null,
-        "MinProperties": null,
-        "AdditionalPropertiesAllowed": false,
-        "AdditionalProperties": null,
-        "Discriminator": null,
-        "Example": null,
-        "Enum": [],
-        "Nullable": false,
-        "ExternalDocs": null,
-        "Deprecated": false,
-        "Xml": null,
-        "Extensions": {},
-        "UnresolvedReference": false,
-        "Reference": null,
-        "Annotations": null
+        "additionalProperties": false
       },
       "RegularUserDto": {
-        "Title": null,
-        "Type": "object",
-        "Format": null,
-        "Description": null,
-        "Maximum": null,
-        "ExclusiveMaximum": null,
-        "Minimum": null,
-        "ExclusiveMinimum": null,
-        "MaxLength": null,
-        "MinLength": null,
-        "Pattern": null,
-        "MultipleOf": null,
-        "Default": null,
-        "ReadOnly": false,
-        "WriteOnly": false,
-        "AllOf": [],
-        "OneOf": [],
-        "AnyOf": [],
-        "Not": null,
-        "Required": [],
-        "Items": null,
-        "MaxItems": null,
-        "MinItems": null,
-        "UniqueItems": null,
-        "Properties": {
+        "type": "object",
+        "properties": {
           "userName": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "password": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "email": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "phone": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "firstName": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           },
           "lastName": {
-            "Title": null,
-            "Type": "string",
-            "Format": null,
-            "Description": null,
-            "Maximum": null,
-            "ExclusiveMaximum": null,
-            "Minimum": null,
-            "ExclusiveMinimum": null,
-            "MaxLength": null,
-            "MinLength": null,
-            "Pattern": null,
-            "MultipleOf": null,
-            "Default": null,
-            "ReadOnly": false,
-            "WriteOnly": false,
-            "AllOf": [],
-            "OneOf": [],
-            "AnyOf": [],
-            "Not": null,
-            "Required": [],
-            "Items": null,
-            "MaxItems": null,
-            "MinItems": null,
-            "UniqueItems": null,
-            "Properties": {},
-            "MaxProperties": null,
-            "MinProperties": null,
-            "AdditionalPropertiesAllowed": true,
-            "AdditionalProperties": null,
-            "Discriminator": null,
-            "Example": null,
-            "Enum": [],
-            "Nullable": true,
-            "ExternalDocs": null,
-            "Deprecated": false,
-            "Xml": null,
-            "Extensions": {},
-            "UnresolvedReference": false,
-            "Reference": null,
-            "Annotations": null
+            "type": "string",
+            "nullable": true
           }
         },
-        "MaxProperties": null,
-        "MinProperties": null,
-        "AdditionalPropertiesAllowed": false,
-        "AdditionalProperties": null,
-        "Discriminator": null,
-        "Example": null,
-        "Enum": [],
-        "Nullable": false,
-        "ExternalDocs": null,
-        "Deprecated": false,
-        "Xml": null,
-        "Extensions": {},
-        "UnresolvedReference": false,
-        "Reference": null,
-        "Annotations": null
+        "additionalProperties": false
       }
     },
-    "Responses": {},
-    "Parameters": {},
-    "Examples": {},
-    "RequestBodies": {},
-    "Headers": {},
-    "SecuritySchemes": {
+    "securitySchemes": {
       "Bearer": {
-        "Type": 0,
-        "Description": "Enter 'Bearer {your token}'",
-        "Name": "Authorization",
-        "In": 1,
-        "Scheme": "Bearer",
-        "BearerFormat": "JWT",
-        "Flows": null,
-        "OpenIdConnectUrl": null,
-        "Extensions": {},
-        "UnresolvedReference": false,
-        "Reference": null
+        "type": "apiKey",
+        "description": "Enter 'Bearer {your token}'",
+        "name": "Authorization",
+        "in": "header"
       }
-    },
-    "Links": {},
-    "Callbacks": {},
-    "Extensions": {}
-  },
-  "SecurityRequirements": [
-    {
-      "Microsoft.OpenApi.Models.OpenApiSecurityScheme": []
     }
-  ],
-  "Tags": [],
-  "ExternalDocs": null,
-  "Extensions": {},
-  "HashCode": "2D742EB24FA592E733CA5E848EB8F055F215041A3D42E9C4ACF8AEDCE37F1009C3742DF9D481B39306EEA06BD3104E73B4B517A0DD93854D01AE3383A13D363D",
-  "Annotations": null
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }
