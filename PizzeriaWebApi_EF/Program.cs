@@ -148,16 +148,10 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Export Swagger JSON med Newtonsoft.Json
-app.MapGet("/export-swagger", async (ISwaggerProvider swaggerProvider) =>
+app.MapGet("/export-swagger", (ISwaggerProvider swaggerProvider) =>
 {
     var swaggerDoc = swaggerProvider.GetSwagger("v1");
-
-    var json = Newtonsoft.Json.JsonConvert.SerializeObject(swaggerDoc, Newtonsoft.Json.Formatting.Indented);
-
-    var outputPath = Path.Combine(Directory.GetCurrentDirectory(), "swagger.json");
-    await File.WriteAllTextAsync(outputPath, json);
-
-    return Results.Ok($"Swagger-dokument sparat som swagger.json i: {outputPath}");
+    return Results.Json(swaggerDoc);
 });
 
 app.Run();
