@@ -150,21 +150,19 @@ internal class Program
 
         app.MapControllers();
 
-        // Export Swagger JSON med Newtonsoft.Json
         app.MapGet("/export-swagger", (ISwaggerProvider swaggerProvider) =>
         {
             var swaggerDoc = swaggerProvider.GetSwagger("v1");
 
-            var outputPath = Path.Combine(Directory.GetCurrentDirectory(), "swagger.json");
-
-            using var fileStream = new FileStream(outputPath, FileMode.Create);
-            using var writer = new StreamWriter(fileStream);
+            using var stream = new MemoryStream();
+            using var writer = new StreamWriter(stream);
             var jsonWriter = new OpenApiJsonWriter(writer);
 
             swaggerDoc.SerializeAsV3(jsonWriter);
-            writer.Flush(); // Viktigt!
+            writer.Flush();
 
-            return Results.Ok($"Swagger JSON exported to: {outputPath}");
+            stream.Position = 0;
+            return Results.Stream(stream, "application/json");
         });
 
         app.Run();
