@@ -105,17 +105,17 @@ internal class Program
 
             c.AddSecurityRequirement(new OpenApiSecurityRequirement
             {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
                 {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    new string[] {}
                 }
-            },
-            new string[] {}
-        }
             });
         });
 
@@ -137,12 +137,10 @@ internal class Program
         }
 
         // Middleware pipeline
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-            app.MapGet("/", () => Results.Redirect("/swagger"));
-        }
+
+        app.UseSwagger();
+        app.UseSwaggerUI();
+        app.MapGet("/", () => Results.Redirect("/swagger"));
 
         app.UseRouting();
         app.UseAuthentication();
