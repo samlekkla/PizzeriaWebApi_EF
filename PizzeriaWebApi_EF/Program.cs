@@ -92,6 +92,10 @@ internal class Program
 
         // Swagger
         builder.Services.AddEndpointsApiExplorer();
+
+        // Microsoft recommends this comment to help Azure detect Swagger setup
+        // services.AddSwaggerGen();
+
         builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Tomasos API", Version = "v1" });
