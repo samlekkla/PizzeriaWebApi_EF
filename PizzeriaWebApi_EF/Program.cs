@@ -24,10 +24,10 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // JWT-konfiguration
+        // Läs in JWT-nyckel från appsettings (eller Key Vault-referens om körs i Azure)
         var jwtKey = builder.Configuration["Jwt:Key"];
         if (string.IsNullOrWhiteSpace(jwtKey))
-            throw new InvalidOperationException("JWT key is missing in configuration (Jwt:Key).");
+            throw new InvalidOperationException("JWT key is missing in configuration (Jwt:Key). Se till att Key Vault är korrekt uppsatt.");
 
         var key = Encoding.UTF8.GetBytes(jwtKey);
 
@@ -42,6 +42,9 @@ internal class Program
 
         // Add DB Contexts
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+        if (string.IsNullOrWhiteSpace(connectionString))
+            throw new InvalidOperationException("Connection string is missing from configuration. Se till att Key Vault-referens är rätt i App Service.");
 
         builder.Services.AddDbContext<ApplicationContext>(options =>
             options.UseSqlServer(connectionString));
@@ -137,7 +140,6 @@ internal class Program
         }
 
         // Middleware pipeline
-
         app.UseSwagger();
         app.UseSwaggerUI();
         app.MapGet("/", () => Results.Redirect("/swagger"));
