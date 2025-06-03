@@ -92,9 +92,7 @@ internal class Program
 
         // Swagger
         builder.Services.AddEndpointsApiExplorer();
-
-        // Microsoft recommends this comment to help Azure detect Swagger setup
-        // services.AddSwaggerGen();
+        builder.Services.AddSwaggerGen();
 
         builder.Services.AddSwaggerGen(c =>
         {
