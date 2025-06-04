@@ -74,5 +74,30 @@ namespace TomasosPizzeria_API.Controllers
             await _dishService.UpdateDishAsync(dish);
             return Ok(dish);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllDishes()
+        {
+            var dishes = await _dishService.GetAllDishesAsync();
+            return Ok(dishes);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetDishById(int id)
+        {
+            var dish = await _dishService.GetDishByIdAsync(id);
+            if (dish == null) return NotFound();
+            return Ok(dish);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteDish(int id)
+        {
+            var dish = await _dishService.GetDishByIdAsync(id);
+            if (dish == null) return NotFound();
+
+            await _dishService.DeleteDishAsync(id);
+            return NoContent();
+        }
     }
 }

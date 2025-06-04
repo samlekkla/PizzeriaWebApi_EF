@@ -17,6 +17,10 @@ using TomasosPizzeria_API.Services;
 using Swashbuckle.AspNetCore.Swagger;
 using Newtonsoft.Json;
 using PizzeriaWebApi_EF.Middleware;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Identity.Web;
+using Microsoft.Identity.Web.Resource;
+using Azure.Identity;
 
 internal class Program
 {
@@ -24,14 +28,24 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Läs in JWT-nyckel från appsettings (eller Key Vault-referens om körs i Azure)
+        // HÃ¤mta Key Vault URL frÃ¥n konfiguration
+        var keyVaultUrl = builder.Configuration["KeyVault:Url"];
+        if (string.IsNullOrWhiteSpace(keyVaultUrl))
+            throw new InvalidOperationException("Key Vault URL is missing appsettings.json during KeyVault:Url");
+
+        builder.Configuration.AddAzureKeyVault(new Uri(keyVaultUrl), new DefaultAzureCredential());
+
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme);
+        builder.Services.AddAuthorization();
+
+        // HÃ¤mta JWT-nyckel
         var jwtKey = builder.Configuration["Jwt:Key"];
         if (string.IsNullOrWhiteSpace(jwtKey))
-            throw new InvalidOperationException("JWT key is missing in configuration (Jwt:Key). Se till att Key Vault är korrekt uppsatt.");
+            throw new InvalidOperationException("JWT key is missing in configuration (Jwt:Key). Kontrollera Key Vault-instÃ¤llningar.");
 
         var key = Encoding.UTF8.GetBytes(jwtKey);
 
-        // Add controllers + JSON hantering
+        // Controllers + JSON
         builder.Services.AddControllers()
             .AddJsonOptions(options =>
             {
@@ -40,15 +54,13 @@ internal class Program
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
 
-        // Add DB Contexts
+        // Connection string
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
         if (string.IsNullOrWhiteSpace(connectionString))
-            throw new InvalidOperationException("Connection string is missing from configuration. Se till att Key Vault-referens är rätt i App Service.");
+            throw new InvalidOperationException("Connection string is missing in Key Vault (DefaultConnection)");
 
         builder.Services.AddDbContext<ApplicationContext>(options =>
             options.UseSqlServer(connectionString));
-
         builder.Services.AddDbContext<ApplicationUserContext>(options =>
             options.UseSqlServer(connectionString));
 
@@ -58,7 +70,7 @@ internal class Program
             .AddEntityFrameworkStores<ApplicationUserContext>()
             .AddDefaultTokenProviders();
 
-        // JWT-auth
+        // JWT Authentication
         builder.Services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -77,7 +89,7 @@ internal class Program
             };
         });
 
-        // Dependency Injection
+        // DI
         builder.Services.AddScoped<IUserService, UserService>();
         builder.Services.AddScoped<UserRepository>();
         builder.Services.AddScoped<IIngredientService, IngredientService>();
@@ -95,7 +107,6 @@ internal class Program
         builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Tomasos API", Version = "v1" });
-
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
                 Name = "Authorization",
@@ -105,7 +116,6 @@ internal class Program
                 In = ParameterLocation.Header,
                 Description = "Enter 'Bearer {your token}'"
             });
-
             c.AddSecurityRequirement(new OpenApiSecurityRequirement
             {
                 {
@@ -124,7 +134,7 @@ internal class Program
 
         var app = builder.Build();
 
-        // Skapa roller automatiskt
+        // Skapa roller
         using (var scope = app.Services.CreateScope())
         {
             var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -139,10 +149,15 @@ internal class Program
             }
         }
 
-        // Middleware pipeline
+        // Middleware
         app.UseSwagger();
-        app.UseSwaggerUI();
-        app.MapGet("/", () => Results.Redirect("/swagger"));
+        app.UseSwaggerUI(c =>
+        {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tomasos API v1");
+            c.RoutePrefix = "swagger";
+        });
+
+        app.MapGet("/", (HttpContext httpContext) => Results.Redirect("/swagger"));
 
         app.UseRouting();
         app.UseAuthentication();

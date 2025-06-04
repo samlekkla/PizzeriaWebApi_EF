@@ -8,6 +8,20 @@
         "swagger"
       ],
       "rollForward": false
+    },
+    "dotnet-ef": {
+      "version": "9.0.5",
+      "commands": [
+        "dotnet-ef"
+      ],
+      "rollForward": false
+    },
+    "microsoft.dotnet-msidentity": {
+      "version": "2.0.8",
+      "commands": [
+        "dotnet-msidentity"
+      ],
+      "rollForward": false
     }
   }
 }
